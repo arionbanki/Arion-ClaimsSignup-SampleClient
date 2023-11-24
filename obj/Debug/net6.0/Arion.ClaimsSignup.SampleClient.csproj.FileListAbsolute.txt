@@ -1,0 +1,17 @@
+C:\projects\ClaimsSignupExternalGithub\Arion-ClaimsSignup-SampleClient\Arion.ClaimsSignup.SampleClient\obj\Debug\net6.0\Arion.ClaimsSignup.SampleClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\ClaimsSignupExternalGithub\Arion-ClaimsSignup-SampleClient\Arion.ClaimsSignup.SampleClient\obj\Debug\net6.0\Arion.ClaimsSignup.SampleClient.AssemblyInfoInputs.cache
+C:\projects\ClaimsSignupExternalGithub\Arion-ClaimsSignup-SampleClient\Arion.ClaimsSignup.SampleClient\obj\Debug\net6.0\Arion.ClaimsSignup.SampleClient.AssemblyInfo.cs
+C:\projects\ClaimsSignupExternalGithub\Arion-ClaimsSignup-SampleClient\Arion.ClaimsSignup.SampleClient\obj\Debug\net6.0\Arion.ClaimsSignup.SampleClient.csproj.CoreCompileInputs.cache
+C:\projects\ClaimsSignupExternalGithub\Arion-ClaimsSignup-SampleClient\Arion.ClaimsSignup.SampleClient\bin\Debug\net6.0\Arion.ClaimsSignup.SampleClient.exe
+C:\projects\ClaimsSignupExternalGithub\Arion-ClaimsSignup-SampleClient\Arion.ClaimsSignup.SampleClient\bin\Debug\net6.0\Arion.ClaimsSignup.SampleClient.deps.json
+C:\projects\ClaimsSignupExternalGithub\Arion-ClaimsSignup-SampleClient\Arion.ClaimsSignup.SampleClient\bin\Debug\net6.0\Arion.ClaimsSignup.SampleClient.runtimeconfig.json
+C:\projects\ClaimsSignupExternalGithub\Arion-ClaimsSignup-SampleClient\Arion.ClaimsSignup.SampleClient\bin\Debug\net6.0\Arion.ClaimsSignup.SampleClient.dll
+C:\projects\ClaimsSignupExternalGithub\Arion-ClaimsSignup-SampleClient\Arion.ClaimsSignup.SampleClient\bin\Debug\net6.0\Arion.ClaimsSignup.SampleClient.pdb
+C:\projects\ClaimsSignupExternalGithub\Arion-ClaimsSignup-SampleClient\Arion.ClaimsSignup.SampleClient\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\projects\ClaimsSignupExternalGithub\Arion-ClaimsSignup-SampleClient\Arion.ClaimsSignup.SampleClient\obj\Debug\net6.0\Arion.ClaimsSignup.SampleClient.csproj.AssemblyReference.cache
+C:\projects\ClaimsSignupExternalGithub\Arion-ClaimsSignup-SampleClient\Arion.ClaimsSignup.SampleClient\obj\Debug\net6.0\Arion.ClaimsSignup.SampleClient.csproj.CopyComplete
+C:\projects\ClaimsSignupExternalGithub\Arion-ClaimsSignup-SampleClient\Arion.ClaimsSignup.SampleClient\obj\Debug\net6.0\Arion.ClaimsSignup.SampleClient.dll
+C:\projects\ClaimsSignupExternalGithub\Arion-ClaimsSignup-SampleClient\Arion.ClaimsSignup.SampleClient\obj\Debug\net6.0\refint\Arion.ClaimsSignup.SampleClient.dll
+C:\projects\ClaimsSignupExternalGithub\Arion-ClaimsSignup-SampleClient\Arion.ClaimsSignup.SampleClient\obj\Debug\net6.0\Arion.ClaimsSignup.SampleClient.pdb
+C:\projects\ClaimsSignupExternalGithub\Arion-ClaimsSignup-SampleClient\Arion.ClaimsSignup.SampleClient\obj\Debug\net6.0\Arion.ClaimsSignup.SampleClient.genruntimeconfig.cache
+C:\projects\ClaimsSignupExternalGithub\Arion-ClaimsSignup-SampleClient\Arion.ClaimsSignup.SampleClient\obj\Debug\net6.0\ref\Arion.ClaimsSignup.SampleClient.dll
