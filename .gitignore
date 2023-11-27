@@ -355,5 +355,5 @@ MigrationBackup/
 # Standard publish folders
 octo16art/
 
-# Folder for mock messaging when running NSB host in debug mode
-.learningtransport
+# Visual Studio
+.vs/
