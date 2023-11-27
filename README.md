@@ -18,7 +18,7 @@ Gets the status of the created agreement.
 Creates a template between TPP and Claimant, uses the agreement that is in use after /claimants
 
 ### 4. api/v1/claimtemplates/{claimTemplateId}/status
-Gets the status of a template. First 10 characters are claimTemplateId, next 4 are bank, next 3 are identifier
+Gets the status of a template. claimTemplateId is returned from /claimtemplates. First 10 characters are the claimantId, next 4 are bank, next 3 are identifier
 
 # Useful links
 https://developer-dev.arionbanki.is/
