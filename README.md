@@ -9,7 +9,7 @@ The individual endpoints need to be called in a specific order to acquire desire
 Does a base check of most internal endpoints. A good way to see if the user is authenticated and has the proper user permissions
 
 ### 1. api/v1/claimants
-Creates an agreement between the third party provider (TPP) and the claimant. Uses the contractId returned from /files.
+Creates an agreement between the third party provider (TPP) and the claimant.
 
 ### 2. api/v1/claimants/{claimantId}/status
 Gets the status of the created agreement.
