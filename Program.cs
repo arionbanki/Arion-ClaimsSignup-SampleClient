@@ -2,8 +2,10 @@
 using Arion.ClaimsSignup.SampleClient.Models.Enums;
 using Arion.ClaimsSignup.SampleClient.Models.Requests;
 using Arion.ClaimsSignup.SampleClient.RequestsApiHelper;
+using System.Text.Json;
 using System.Net.Http.Headers;
 using System.Security.Cryptography.X509Certificates;
+using System.Text.Json.Serialization;
 
 namespace IsIT.Claims.Sandbox.DeveloperConsole;
 
@@ -26,13 +28,6 @@ class Programs
 
     // client scopes
     private static readonly string CLIENT_SCOPES = "profile claims.readwrite";
-
-    // ID of the request, unique to the call, as determined by the initiating party.
-    private static readonly string REQUESTID = Guid.NewGuid().ToString();
-
-    // Access Token created in Developer Portal from UserApplication and User.
-    private static readonly string ACCESS_TOKEN = "[Place your token from the developer portal in here]"; // To get access token on production, use https://curity-prod.arionbanki.is/oauth/v2/oauth-token
-                                                                                                          // Wellknown OpenId enpoint on production can be found here: https://curity.arionbanki.is/oauth/v2/oauth-anonymous/.well-known/openid-configuration
 
     private static readonly string PATH_TO_CERTIFICATE = "[pathToCert.pfx]";
 
@@ -163,6 +158,12 @@ class Programs
         nvc.Add(new KeyValuePair<string, string>("client_secret", CLIENT_SECRET));
         nvc.Add(new KeyValuePair<string, string>("scope", CLIENT_SCOPES));
 
+        // Get token from curity
+        HttpClient client = new HttpClient();
+        var res = await client.PostAsync("https://curity.arionbanki.is/oauth/v2/oauth-token", new FormUrlEncodedContent(nvc));  // To get access token on production, use https://curity.arionbanki.is/oauth/v2/oauth-token
+        var json = await res.Content.ReadAsStringAsync();                                                                       // Wellknown OpenId enpoint on production can be found here: https://curity.arionbanki.is/oauth/v2/oauth-anonymous/.well-known/openid-configuration
+        var token = JsonSerializer.Deserialize<Token>(json);                                                                                                                     
+
         // Adding certificate to the handler
         var clientCertificate = new X509Certificate2(PATH_TO_CERTIFICATE);
         var handler = new HttpClientHandler();
@@ -172,14 +173,28 @@ class Programs
         HttpClient clientWithCertificate = new HttpClient(handler);
 
         // Set headers
-        clientWithCertificate.DefaultRequestHeaders.Add("X-Request-ID", REQUESTID);                                        // Id of Consent.
         clientWithCertificate.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", APIKEY);                              // Azure Apim Subscription key
         clientWithCertificate.DefaultRequestHeaders.Add("Accept", "application/json");
 
         // Set bearer token
-        clientWithCertificate.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", ACCESS_TOKEN); // PSU Bearer token
+        clientWithCertificate.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token?.AccessToken); // PSU Bearer token
 
         return clientWithCertificate;
+    }
+
+    internal class Token
+    {
+        [JsonPropertyName("access_token")]
+        public string? AccessToken { get; set; }
+
+        [JsonPropertyName("token_type")]
+        public string? TokenType { get; set; }
+
+        [JsonPropertyName("expires_in")]
+        public int ExpiresIn { get; set; }
+
+        [JsonPropertyName("refresh_token")]
+        public string? RefreshToken { get; set; }
     }
 
     public class RequestBodies

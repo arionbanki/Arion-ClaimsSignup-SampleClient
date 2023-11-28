@@ -1,6 +1,5 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using System.Text;
+﻿using System.Text;
+using System.Text.Json;
 
 namespace Arion.ClaimsSignup.SampleClient.RequestsApiHelper
 {
@@ -8,24 +7,23 @@ namespace Arion.ClaimsSignup.SampleClient.RequestsApiHelper
     {
         public static StringContent CreateSerializedRequest<TRequest>(TRequest request)
         {
-            return CreateSerializedRequest<TRequest>(request, GetDefaultNamingStrategy());
+            return CreateSerializedRequest(request, GetDefaultNamingStrategy());
         }
 
-        public static StringContent CreateSerializedRequest<TRequest>(TRequest request, NamingStrategy namingStrategy)
+        public static StringContent CreateSerializedRequest<TRequest>(TRequest request, JsonNamingPolicy namingPolicy)
         {
-            var result = new StringContent(JsonConvert.SerializeObject(request, new JsonSerializerSettings
+            var result = new StringContent(JsonSerializer.Serialize(request, new JsonSerializerOptions
             {
-                ContractResolver = new DefaultContractResolver
-                {
-                    NamingStrategy = namingStrategy
-                }
-            }), Encoding.UTF8, "application/vnd.api+json");
+                PropertyNamingPolicy = namingPolicy,
+                WriteIndented = true // Optional: makes the JSON output more readable
+            }), Encoding.UTF8, "application/json");
 
             return result;
         }
-        internal static NamingStrategy GetDefaultNamingStrategy()
+
+        internal static JsonNamingPolicy GetDefaultNamingStrategy()
         {
-            return new CamelCaseNamingStrategy();
+            return JsonNamingPolicy.CamelCase;
         }
     }
 }
