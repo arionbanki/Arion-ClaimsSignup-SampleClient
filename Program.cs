@@ -29,8 +29,6 @@ class Programs
     // client scopes
     private static readonly string CLIENT_SCOPES = "profile claims.readwrite";
 
-    private static readonly string PATH_TO_CERTIFICATE = "[pathToCert.pfx]";
-
     static async Task Main(string[] args)
     {
         bool showMenu = true;
@@ -162,12 +160,17 @@ class Programs
         HttpClient client = new HttpClient();
         var res = await client.PostAsync("https://curity.arionbanki.is/oauth/v2/oauth-token", new FormUrlEncodedContent(nvc));  // To get access token on production, use https://curity.arionbanki.is/oauth/v2/oauth-token
         var json = await res.Content.ReadAsStringAsync();                                                                       // Wellknown OpenId enpoint on production can be found here: https://curity.arionbanki.is/oauth/v2/oauth-anonymous/.well-known/openid-configuration
-        var token = JsonSerializer.Deserialize<Token>(json);                                                                                                                     
+        var token = JsonSerializer.Deserialize<Token>(json);
 
-        // Adding certificate to the handler
-        var clientCertificate = new X509Certificate2(PATH_TO_CERTIFICATE);
+        // Fetch certificate from store
+        X509Store store = new X509Store(StoreLocation.CurrentUser);
+        store.Open(OpenFlags.ReadOnly);
+        X509Certificate2Collection cers = store.Certificates.Find(X509FindType.FindBySubjectName, "[enter subject name]", false); 
+
+        // Adding certificate to handler
         var handler = new HttpClientHandler();
-        handler.ClientCertificates.Add(clientCertificate);
+        handler.ClientCertificates.Add(cers[0]);
+        store.Close();
 
         // Get HttpClient
         HttpClient clientWithCertificate = new HttpClient(handler);
