@@ -158,8 +158,8 @@ class Programs
 
         // Get token from curity
         HttpClient client = new HttpClient();
-        var res = await client.PostAsync("https://curity.arionbanki.is/oauth/v2/oauth-token", new FormUrlEncodedContent(nvc));  // To get access token on production, use https://curity.arionbanki.is/oauth/v2/oauth-token
-        var json = await res.Content.ReadAsStringAsync();                                                                       // Wellknown OpenId enpoint on production can be found here: https://curity.arionbanki.is/oauth/v2/oauth-anonymous/.well-known/openid-configuration
+        var res = await client.PostAsync("https://curity.arionbanki.is/oauth/v2/oauth-token", new FormUrlEncodedContent(nvc));  // Wellknown OpenId enpoint on production can be found here: https://curity.arionbanki.is/oauth/v2/oauth-anonymous/.well-known/openid-configuration
+        var json = await res.Content.ReadAsStringAsync();                                                                       
         var token = JsonSerializer.Deserialize<Token>(json);
 
         // Fetch certificate from store
