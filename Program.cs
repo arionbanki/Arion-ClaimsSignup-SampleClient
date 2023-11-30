@@ -180,7 +180,7 @@ class Programs
         clientWithCertificate.DefaultRequestHeaders.Add("Accept", "application/json");
 
         // Set bearer token
-        clientWithCertificate.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token?.AccessToken); // PSU Bearer token
+        clientWithCertificate.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token?.AccessToken); // Bearer token
 
         return clientWithCertificate;
     }
