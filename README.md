@@ -21,4 +21,4 @@ Creates a template between TPP and Claimant, uses the agreement that is in use a
 Gets the status of a template. claimTemplateId is returned from /claimtemplates. First 10 characters are the claimantId, next 4 are bank, next 3 are identifier
 
 # Useful links
-https://developer-dev.arionbanki.is/
+https://developer.arionbanki.is/
