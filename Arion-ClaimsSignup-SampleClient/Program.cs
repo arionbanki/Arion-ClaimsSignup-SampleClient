@@ -165,7 +165,7 @@ class Programs
         // Fetch certificate from store
         X509Store store = new X509Store(StoreLocation.CurrentUser);
         store.Open(OpenFlags.ReadOnly);
-        X509Certificate2Collection cers = store.Certificates.Find(X509FindType.FindBySubjectName, "[enter subject name]", false); 
+        X509Certificate2Collection cers = store.Certificates.Find(X509FindType.FindBySubjectName, "[enter subject name]", false);
 
         // Adding certificate to handler
         var handler = new HttpClientHandler();
