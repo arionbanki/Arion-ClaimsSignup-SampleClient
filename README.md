@@ -49,7 +49,9 @@ You have now registered your certificate. It should now look like this
 ![App Screenshot](https://github.com/arionbanki/Arion-ClaimsSignup-SampleClient/blob/main/doc-images/Postman-Cert-Auth-Step4.png)
 
 ### Authorization - OAuth 2.0 
-The following needs to be configured
+This method shows how the token is received. With this implementation the user needs to get a new access token manually.
+
+The following needs to be configured.
 
 **Access Token URL** - https://curity.arionbanki.is/oauth/v2/oauth-token
 
