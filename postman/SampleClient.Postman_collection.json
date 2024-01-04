@@ -1,0 +1,1273 @@
+{
+	"info": {
+		"_postman_id": "1f839b6a-bbe6-48ff-b514-f0ade0eec20b",
+		"name": "IsIT Claims SignUp API V1 - SampleClient",
+		"description": "Claims SignUp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19964482",
+		"_collection_link": "https://fintech-arion.postman.co/workspace/Team-Workspace~d18915f1-2d5b-4a44-8d0c-7b9929b01410/collection/19964482-1f839b6a-bbe6-48ff-b514-f0ade0eec20b?action=share&source=collection_link&creator=19964482"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "claimants",
+							"item": [
+								{
+									"name": "{claimantId}",
+									"item": [
+										{
+											"name": "status",
+											"item": [
+												{
+													"name": "Claimant creation status",
+													"request": {
+														"auth": {
+															"type": "oauth2",
+															"oauth2": [
+																{
+																	"key": "refreshTokenUrl",
+																	"value": "https://curity.arionbanki.is/oauth/v2/oauth-token",
+																	"type": "string"
+																},
+																{
+																	"key": "accessTokenUrl",
+																	"value": "https://curity.arionbanki.is/oauth/v2/oauth-token",
+																	"type": "string"
+																},
+																{
+																	"key": "headerPrefix",
+																	"value": "Bearer",
+																	"type": "string"
+																},
+																{
+																	"key": "clientSecret",
+																	"value": "{{client_secret}}",
+																	"type": "string"
+																},
+																{
+																	"key": "clientId",
+																	"value": "{{client_id}}",
+																	"type": "string"
+																},
+																{
+																	"key": "grant_type",
+																	"value": "client_credentials",
+																	"type": "string"
+																},
+																{
+																	"key": "addTokenTo",
+																	"value": "header",
+																	"type": "string"
+																},
+																{
+																	"key": "tokenRequestParams",
+																	"value": [],
+																	"type": "any"
+																},
+																{
+																	"key": "client_authentication",
+																	"value": "header",
+																	"type": "string"
+																},
+																{
+																	"key": "scope",
+																	"value": "profile claims.readwrite",
+																	"type": "string"
+																},
+																{
+																	"key": "tokenName",
+																	"value": "newToken",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Ocp-Apim-Subscription-Key",
+																"value": "{{api_key}}",
+																"type": "text"
+															}
+														],
+														"url": {
+															"raw": "{{gwBasePath}}/claimants/:claimantId/status",
+															"host": [
+																"{{gwBasePath}}"
+															],
+															"path": [
+																"claimants",
+																":claimantId",
+																"status"
+															],
+															"variable": [
+																{
+																	"key": "claimantId",
+																	"value": "[\"Enter claimantId\"]",
+																	"description": "(Required) Resource identification of the claimant."
+																}
+															]
+														},
+														"description": "Gets the status of the created agreement"
+													},
+													"response": [
+														{
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "ID of the request, unique to the call, as determined by the initiating party.",
+																		"key": "X-Request-ID",
+																		"value": "<uuid>"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/claimants/:claimantId/status",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"claimants",
+																		":claimantId",
+																		"status"
+																	],
+																	"variable": [
+																		{
+																			"key": "claimantId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"claimantId\": \"5722052108\",\n  \"uri\": \"<string>\",\n  \"state\": \"Completed\",\n  \"status\": \"Success\",\n  \"errorMessage\": \"<string>\"\n}"
+														},
+														{
+															"name": "Bad Request",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "ID of the request, unique to the call, as determined by the initiating party.",
+																		"key": "X-Request-ID",
+																		"value": "<uuid>"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/claimants/:claimantId/status",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"claimants",
+																		":claimantId",
+																		"status"
+																	],
+																	"variable": [
+																		{
+																			"key": "claimantId"
+																		}
+																	]
+																}
+															},
+															"status": "Bad Request",
+															"code": 400,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\",\n  \"instance\": \"<string>\"\n}"
+														},
+														{
+															"name": "Server Error",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "ID of the request, unique to the call, as determined by the initiating party.",
+																		"key": "X-Request-ID",
+																		"value": "<uuid>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/claimants/:claimantId/status",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"claimants",
+																		":claimantId",
+																		"status"
+																	],
+																	"variable": [
+																		{
+																			"key": "claimantId"
+																		}
+																	]
+																}
+															},
+															"status": "Internal Server Error",
+															"code": 500,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"body": ""
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "Sign up a new claimant",
+									"request": {
+										"auth": {
+											"type": "oauth2",
+											"oauth2": [
+												{
+													"key": "refreshTokenUrl",
+													"value": "https://curity.arionbanki.is/oauth/v2/oauth-token",
+													"type": "string"
+												},
+												{
+													"key": "accessTokenUrl",
+													"value": "https://curity.arionbanki.is/oauth/v2/oauth-token",
+													"type": "string"
+												},
+												{
+													"key": "clientId",
+													"value": "{{client_id}}",
+													"type": "string"
+												},
+												{
+													"key": "clientSecret",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "grant_type",
+													"value": "client_credentials",
+													"type": "string"
+												},
+												{
+													"key": "headerPrefix",
+													"value": "Bearer ",
+													"type": "string"
+												},
+												{
+													"key": "addTokenTo",
+													"value": "header",
+													"type": "string"
+												},
+												{
+													"key": "tokenRequestParams",
+													"value": [],
+													"type": "any"
+												},
+												{
+													"key": "client_authentication",
+													"value": "header",
+													"type": "string"
+												},
+												{
+													"key": "scope",
+													"value": "profile claims.readwrite",
+													"type": "string"
+												},
+												{
+													"key": "tokenName",
+													"value": "newToken",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"description": "ID of the request, unique to the call, as determined by the initiating party.",
+												"key": "X-Request-ID",
+												"value": "{{$guid}}"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Ocp-Apim-Subscription-Key",
+												"value": "{{api_key}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"claimantId\": \"[Enter claimantId]\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{gwBasePath}}/claimants",
+											"host": [
+												"{{gwBasePath}}"
+											],
+											"path": [
+												"claimants"
+											]
+										},
+										"description": "Creates an agreement between TPP and Claimant, uses the contractId returned from /files"
+									},
+									"response": [
+										{
+											"name": "Accepted",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": "ID of the request, unique to the call, as determined by the initiating party.",
+														"key": "X-Request-ID",
+														"value": "<uuid>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"claimantId\": \"5103291707\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/claimants",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"claimants"
+													]
+												}
+											},
+											"status": "Accepted",
+											"code": 202,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"claimantId\": \"5722052108\",\n  \"uri\": \"<string>\",\n  \"state\": \"Completed\",\n  \"status\": \"Success\",\n  \"errorMessage\": \"<string>\"\n}"
+										},
+										{
+											"name": "Bad Request",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": "ID of the request, unique to the call, as determined by the initiating party.",
+														"key": "X-Request-ID",
+														"value": "<uuid>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"claimantId\": \"5103291707\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/claimants",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"claimants"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\",\n  \"instance\": \"<string>\"\n}"
+										},
+										{
+											"name": "Server Error",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": "ID of the request, unique to the call, as determined by the initiating party.",
+														"key": "X-Request-ID",
+														"value": "<uuid>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"claimantId\": \"5103291707\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/claimants",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"claimants"
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "claimtemplates",
+							"item": [
+								{
+									"name": "{claimTemplateId}",
+									"item": [
+										{
+											"name": "status",
+											"item": [
+												{
+													"name": "Claim template creation status",
+													"request": {
+														"auth": {
+															"type": "oauth2",
+															"oauth2": [
+																{
+																	"key": "refreshTokenUrl",
+																	"value": "https://curity.arionbanki.is/oauth/v2/oauth-token",
+																	"type": "string"
+																},
+																{
+																	"key": "accessTokenUrl",
+																	"value": "https://curity.arionbanki.is/oauth/v2/oauth-token",
+																	"type": "string"
+																},
+																{
+																	"key": "clientId",
+																	"value": "{{client_id}}",
+																	"type": "string"
+																},
+																{
+																	"key": "clientSecret",
+																	"value": "{{client_secret}}",
+																	"type": "string"
+																},
+																{
+																	"key": "grant_type",
+																	"value": "client_credentials",
+																	"type": "string"
+																},
+																{
+																	"key": "headerPrefix",
+																	"value": "Bearer ",
+																	"type": "string"
+																},
+																{
+																	"key": "addTokenTo",
+																	"value": "header",
+																	"type": "string"
+																},
+																{
+																	"key": "tokenRequestParams",
+																	"value": [],
+																	"type": "any"
+																},
+																{
+																	"key": "client_authentication",
+																	"value": "header",
+																	"type": "string"
+																},
+																{
+																	"key": "scope",
+																	"value": "profile claims.readwrite",
+																	"type": "string"
+																},
+																{
+																	"key": "tokenName",
+																	"value": "newToken",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "GET",
+														"header": [
+															{
+																"description": "ID of the request, unique to the call, as determined by the initiating party.",
+																"key": "X-Request-ID",
+																"value": "{{$guid}}"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Ocp-Apim-Subscription-Key",
+																"value": "{{api_key}}",
+																"type": "text"
+															}
+														],
+														"url": {
+															"raw": "{{gwBasePath}}/claimtemplates/:claimTemplateId/status",
+															"host": [
+																"{{gwBasePath}}"
+															],
+															"path": [
+																"claimtemplates",
+																":claimTemplateId",
+																"status"
+															],
+															"variable": [
+																{
+																	"key": "claimTemplateId",
+																	"value": "[\"Enter claimTemplateId\"]",
+																	"description": "(Required) Resource identification of the claim template"
+																}
+															]
+														},
+														"description": "Gets the status of a template. First 10 characters are claimTemplateId, next 4 are bank, next 3 are identifier"
+													},
+													"response": [
+														{
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "ID of the request, unique to the call, as determined by the initiating party.",
+																		"key": "X-Request-ID",
+																		"value": "<uuid>"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/claimtemplates/:claimTemplateId/status",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"claimtemplates",
+																		":claimTemplateId",
+																		"status"
+																	],
+																	"variable": [
+																		{
+																			"key": "claimTemplateId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"claimTemplateId\": \"21595739280578T\",\n  \"uri\": \"<string>\",\n  \"state\": \"Scheduled\",\n  \"status\": \"InProgress\",\n  \"errorMessage\": \"<string>\"\n}"
+														},
+														{
+															"name": "Bad Request",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "ID of the request, unique to the call, as determined by the initiating party.",
+																		"key": "X-Request-ID",
+																		"value": "<uuid>"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/claimtemplates/:claimTemplateId/status",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"claimtemplates",
+																		":claimTemplateId",
+																		"status"
+																	],
+																	"variable": [
+																		{
+																			"key": "claimTemplateId"
+																		}
+																	]
+																}
+															},
+															"status": "Bad Request",
+															"code": 400,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\",\n  \"instance\": \"<string>\"\n}"
+														},
+														{
+															"name": "Server Error",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"description": "ID of the request, unique to the call, as determined by the initiating party.",
+																		"key": "X-Request-ID",
+																		"value": "<uuid>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/claimtemplates/:claimTemplateId/status",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"claimtemplates",
+																		":claimTemplateId",
+																		"status"
+																	],
+																	"variable": [
+																		{
+																			"key": "claimTemplateId"
+																		}
+																	]
+																}
+															},
+															"status": "Internal Server Error",
+															"code": 500,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"body": ""
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "Create a new claim template",
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {}
+									},
+									"request": {
+										"auth": {
+											"type": "oauth2",
+											"oauth2": [
+												{
+													"key": "refreshTokenUrl",
+													"value": "https://curity.arionbanki.is/oauth/v2/oauth-token",
+													"type": "string"
+												},
+												{
+													"key": "accessTokenUrl",
+													"value": "https://curity.arionbanki.is/oauth/v2/oauth-token",
+													"type": "string"
+												},
+												{
+													"key": "clientId",
+													"value": "{{client_id}}",
+													"type": "string"
+												},
+												{
+													"key": "clientSecret",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "grant_type",
+													"value": "client_credentials",
+													"type": "string"
+												},
+												{
+													"key": "headerPrefix",
+													"value": "Bearer ",
+													"type": "string"
+												},
+												{
+													"key": "addTokenTo",
+													"value": "header",
+													"type": "string"
+												},
+												{
+													"key": "tokenRequestParams",
+													"value": [],
+													"type": "any"
+												},
+												{
+													"key": "client_authentication",
+													"value": "header",
+													"type": "string"
+												},
+												{
+													"key": "scope",
+													"value": "profile claims.readwrite",
+													"type": "string"
+												},
+												{
+													"key": "tokenName",
+													"value": "newToken",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"description": "ID of the request, unique to the call, as determined by the initiating party.",
+												"key": "X-Request-ID",
+												"value": "{{$guid}}"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Ocp-Apim-Subscription-Key",
+												"value": "{{api_key}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"ClaimantStatementExtendedReferenceType\": \"ClaimantStatementExtendedReferenceType.ReferenceNumber\",\n  \"ClaimantStatementReferenceType\": \"ClaimantStatementReferenceType.DueDate\",\n  \"ClaimantId\": \"NATIONAL_REGISTRY_ID\",\n  \"Bank\": \"[place your 4 digit bank account here]\",\n  \"TemplateCode\": \"[place your 3 digit template code here]\",\n  \"Category\": \"[place your 2 digit category here]\",\n  \"PayorStatementExtendedReferenceType\": \"PayorStatementExtendedReferenceType.ClaimantId\",\n  \"DepositAccount\": {\n    \"Id\": \"[place your 12 digit deposit account id here]\"\n  },\n  \"WithdrawalAccount\": \"[place your 12 digit withdrawal account here]\",\n  \"AdditionalDepositAccounts\": [\n    {\n      \"Id\": \"[place your 12 digit additional deposit account id here]\",\n      \"OwnerId\": \"NATIONAL_REGISTRY_ID\",\n      \"Type\": \"AdditionalDepositAccountType.NoticeAndPaymentFee\",\n      \"Code\": \"[place your 4 digit additional deposit account code here]\",\n      \"Priority\": 6,\n      \"DepositAmount\": {\n        \"Value\": 10,\n        \"ValueType\": \"Arion.ClaimsSignup.SampleClient.Models.Enums.ValueType.FixedAmount\"\n      }\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{gwBasePath}}/claimtemplates",
+											"host": [
+												"{{gwBasePath}}"
+											],
+											"path": [
+												"claimtemplates"
+											]
+										},
+										"description": "Creates a template between TPP and Claimant, uses the agreement that is in use after /claimants"
+									},
+									"response": [
+										{
+											"name": "Accepted",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": "ID of the request, unique to the call, as determined by the initiating party.",
+														"key": "X-Request-ID",
+														"value": "<uuid>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"bank\": \"9276\",\n  \"claimantId\": \"4702745107\",\n  \"claimantStatementExtendedReferenceType\": \"ReferenceNumber\",\n  \"claimantStatementReferenceType\": \"BillNumber\",\n  \"payorStatementExtendedReferenceType\": \"DueDate\",\n  \"templateCode\": \"tVo\",\n  \"category\": \"<string>\",\n  \"depositAccount\": {\n    \"id\": \"650760770413\"\n  },\n  \"withdrawalAccount\": \"369685359090\",\n  \"additionalDepositAccounts\": [\n    {\n      \"id\": \"<string>\",\n      \"ownerId\": \"<string>\",\n      \"type\": \"DefaultInterest\",\n      \"code\": \"<string>\",\n      \"priority\": \"<integer>\",\n      \"depositAmount\": {\n        \"value\": \"<double>\",\n        \"valueType\": \"Percentage\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"ownerId\": \"<string>\",\n      \"type\": \"OtherCosts\",\n      \"code\": \"<string>\",\n      \"priority\": \"<integer>\",\n      \"depositAmount\": {\n        \"value\": \"<double>\",\n        \"valueType\": \"FixedAmount\"\n      }\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/claimtemplates",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"claimtemplates"
+													]
+												}
+											},
+											"status": "Accepted",
+											"code": 202,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"claimTemplateId\": \"21595739280578T\",\n  \"uri\": \"<string>\",\n  \"state\": \"Scheduled\",\n  \"status\": \"InProgress\",\n  \"errorMessage\": \"<string>\"\n}"
+										},
+										{
+											"name": "Bad Request",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": "ID of the request, unique to the call, as determined by the initiating party.",
+														"key": "X-Request-ID",
+														"value": "<uuid>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"bank\": \"9276\",\n  \"claimantId\": \"4702745107\",\n  \"claimantStatementExtendedReferenceType\": \"ReferenceNumber\",\n  \"claimantStatementReferenceType\": \"BillNumber\",\n  \"payorStatementExtendedReferenceType\": \"DueDate\",\n  \"templateCode\": \"tVo\",\n  \"category\": \"<string>\",\n  \"depositAccount\": {\n    \"id\": \"650760770413\"\n  },\n  \"withdrawalAccount\": \"369685359090\",\n  \"additionalDepositAccounts\": [\n    {\n      \"id\": \"<string>\",\n      \"ownerId\": \"<string>\",\n      \"type\": \"DefaultInterest\",\n      \"code\": \"<string>\",\n      \"priority\": \"<integer>\",\n      \"depositAmount\": {\n        \"value\": \"<double>\",\n        \"valueType\": \"Percentage\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"ownerId\": \"<string>\",\n      \"type\": \"OtherCosts\",\n      \"code\": \"<string>\",\n      \"priority\": \"<integer>\",\n      \"depositAmount\": {\n        \"value\": \"<double>\",\n        \"valueType\": \"FixedAmount\"\n      }\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/claimtemplates",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"claimtemplates"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\",\n  \"instance\": \"<string>\"\n}"
+										},
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": "ID of the request, unique to the call, as determined by the initiating party.",
+														"key": "X-Request-ID",
+														"value": "<uuid>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"bank\": \"9276\",\n  \"claimantId\": \"4702745107\",\n  \"claimantStatementExtendedReferenceType\": \"ReferenceNumber\",\n  \"claimantStatementReferenceType\": \"BillNumber\",\n  \"payorStatementExtendedReferenceType\": \"DueDate\",\n  \"templateCode\": \"tVo\",\n  \"category\": \"<string>\",\n  \"depositAccount\": {\n    \"id\": \"650760770413\"\n  },\n  \"withdrawalAccount\": \"369685359090\",\n  \"additionalDepositAccounts\": [\n    {\n      \"id\": \"<string>\",\n      \"ownerId\": \"<string>\",\n      \"type\": \"DefaultInterest\",\n      \"code\": \"<string>\",\n      \"priority\": \"<integer>\",\n      \"depositAmount\": {\n        \"value\": \"<double>\",\n        \"valueType\": \"Percentage\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"ownerId\": \"<string>\",\n      \"type\": \"OtherCosts\",\n      \"code\": \"<string>\",\n      \"priority\": \"<integer>\",\n      \"depositAmount\": {\n        \"value\": \"<double>\",\n        \"valueType\": \"FixedAmount\"\n      }\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/claimtemplates",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"claimtemplates"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\",\n  \"instance\": \"<string>\"\n}"
+										},
+										{
+											"name": "Server Error",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"description": "ID of the request, unique to the call, as determined by the initiating party.",
+														"key": "X-Request-ID",
+														"value": "<uuid>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"bank\": \"9276\",\n  \"claimantId\": \"4702745107\",\n  \"claimantStatementExtendedReferenceType\": \"ReferenceNumber\",\n  \"claimantStatementReferenceType\": \"BillNumber\",\n  \"payorStatementExtendedReferenceType\": \"DueDate\",\n  \"templateCode\": \"tVo\",\n  \"category\": \"<string>\",\n  \"depositAccount\": {\n    \"id\": \"650760770413\"\n  },\n  \"withdrawalAccount\": \"369685359090\",\n  \"additionalDepositAccounts\": [\n    {\n      \"id\": \"<string>\",\n      \"ownerId\": \"<string>\",\n      \"type\": \"DefaultInterest\",\n      \"code\": \"<string>\",\n      \"priority\": \"<integer>\",\n      \"depositAmount\": {\n        \"value\": \"<double>\",\n        \"valueType\": \"Percentage\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"ownerId\": \"<string>\",\n      \"type\": \"OtherCosts\",\n      \"code\": \"<string>\",\n      \"priority\": \"<integer>\",\n      \"depositAmount\": {\n        \"value\": \"<double>\",\n        \"valueType\": \"FixedAmount\"\n      }\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/claimtemplates",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"claimtemplates"
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "echo",
+							"item": [
+								{
+									"name": "Makes a Echo request",
+									"request": {
+										"auth": {
+											"type": "oauth2",
+											"oauth2": [
+												{
+													"key": "clientId",
+													"value": "{{client_id}}",
+													"type": "string"
+												},
+												{
+													"key": "refreshTokenUrl",
+													"value": "https://curity.arionbanki.is/oauth/v2/oauth-token",
+													"type": "string"
+												},
+												{
+													"key": "accessTokenUrl",
+													"value": "https://curity.arionbanki.is/oauth/v2/oauth-token",
+													"type": "string"
+												},
+												{
+													"key": "clientSecret",
+													"value": "{{client_secret}}",
+													"type": "string"
+												},
+												{
+													"key": "grant_type",
+													"value": "client_credentials",
+													"type": "string"
+												},
+												{
+													"key": "headerPrefix",
+													"value": "Bearer ",
+													"type": "string"
+												},
+												{
+													"key": "addTokenTo",
+													"value": "header",
+													"type": "string"
+												},
+												{
+													"key": "tokenRequestParams",
+													"value": [],
+													"type": "any"
+												},
+												{
+													"key": "client_authentication",
+													"value": "header",
+													"type": "string"
+												},
+												{
+													"key": "scope",
+													"value": "profile claims.readwrite",
+													"type": "string"
+												},
+												{
+													"key": "tokenName",
+													"value": "newToken",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Ocp-Apim-Subscription-Key",
+												"value": "{{api_key}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{gwBasePath}}/echo",
+											"host": [
+												"{{gwBasePath}}"
+											],
+											"path": [
+												"echo"
+											]
+										},
+										"description": "Does a base check of most internal endpoints. A good way to see if the user is authenticated and has the proper user permissions"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/echo",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"echo"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "<string>"
+										},
+										{
+											"name": "Bad Request",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/echo",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"echo"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\",\n  \"instance\": \"<string>\"\n}"
+										},
+										{
+											"name": "Server Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/echo",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"echo"
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
