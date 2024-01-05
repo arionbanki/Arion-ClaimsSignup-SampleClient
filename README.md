@@ -20,8 +20,12 @@ Creates a template between TPP and Claimant, uses the agreement that is in use a
 ### 4. api/v1/claimtemplates/{claimTemplateId}/status
 Gets the status of a template. claimTemplateId is returned from /claimtemplates. First 10 characters are the claimantId, next 4 are bank, next 3 are identifier
 
+# Postman - SampleClient
 
-# Postman Arion-ClaimsSignup-SampleClient
+### Import Postman Collection
+A base sample client is available to import for Postman. You can follow the documentation to get it up and running.
+
+File location: **postman\SampleClient.Postman_collection.json** 
 
 ### Certificates in Postman
 To register a certificate in Postman the following is reccomended
